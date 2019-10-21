@@ -18,9 +18,9 @@ class MainActivity : AppCompatActivity() {
 		setContentView(R.layout.activity_main)
 		setSupportActionBar(toolbar)
 
-		val courses = ArrayList<ModelDetails>()
-		courses.add(ModelDetails("Операционни системи за мобилни устройства", "CITB704", "314 I", "08:00 - 09:30"))
-		courses.add(ModelDetails("Генератори на компютърни игри", "CITB603", "702 II", "18:00 - 19:30"))
+		val courses = ArrayList<CourseModel>()
+		courses.add(CourseModel("Операционни системи за мобилни устройства", "CITB704", "314 I", "08:00 - 09:30"))
+		courses.add(CourseModel("Генератори на компютърни игри", "CITB603", "702 II", "18:00 - 19:30"))
 
 		val adapter = CourseAdapter(courses)
 		home_recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)

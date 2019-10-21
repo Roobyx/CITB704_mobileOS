@@ -4,33 +4,39 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:orientation="vertical"
 	android:layout_width="match_parent"
-	android:layout_height="wrap_content">
+	android:layout_height="wrap_content"
+	android:padding="4sp" >
 
 
 	<TextView
 		android:id="@+id/label_cr_course_name"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content" />
+		android:layout_height="wrap_content"
+		android:textSize="@dimen/primaryInfoSize"/>
 
 	<TextView
 		android:id="@+id/label_cr_course_room"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content" />
+		android:layout_height="wrap_content"
+		android:textSize="@dimen/additionalInfoSize" />
 
 	<TextView
 		android:id="@+id/label_cr_course_signature"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content" />
+		android:layout_height="wrap_content"
+		android:textSize="@dimen/additionalInfoSize" />
 
 	<TextView
 		android:id="@+id/label_cr_course_time"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content" />
+		android:layout_height="wrap_content"
+		android:textSize="@dimen/additionalInfoSize" />
 
 	<View
 		android:id="@+id/divider2"
 		android:layout_width="match_parent"
 		android:layout_height="1dp"
-		android:background="?android:attr/listDivider" />
+		android:background="?android:attr/listDivider"
+		android:textSize="@dimen/additionalInfoSize" />
 
 </LinearLayout>
