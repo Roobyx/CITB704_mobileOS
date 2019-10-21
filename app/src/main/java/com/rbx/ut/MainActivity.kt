@@ -22,9 +22,8 @@ class MainActivity : AppCompatActivity() {
 		courses.add(CourseModel("Операционни системи за мобилни устройства", "CITB704", "314 I", "08:00 - 09:30"))
 		courses.add(CourseModel("Генератори на компютърни игри", "CITB603", "702 II", "18:00 - 19:30"))
 
-		val adapter = CourseAdapter(courses)
 		home_recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-		home_recyclerView.adapter = adapter
+		home_recyclerView.adapter = CourseAdapter(courses)
 
 		fab.setOnClickListener {
 			Intent(this, AddCourse::class.java).also(this::startActivity)

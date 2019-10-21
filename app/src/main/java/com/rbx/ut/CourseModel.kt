@@ -6,13 +6,16 @@ import androidx.room.PrimaryKey
 
 @Entity
 class CourseModel constructor(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
     @ColumnInfo(name = "course_name")
-    private val courseName: String,
+    val courseName: String,
     @ColumnInfo(name = "course_signature")
-    private val signature:String,
+    val signature:String,
     @ColumnInfo(name = "course_room")
-    private val room: String,
+    val room: String,
     @ColumnInfo(name = "course_time")
-    private val time:String)
+    val time:String
+    ) {
+
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0
+}
