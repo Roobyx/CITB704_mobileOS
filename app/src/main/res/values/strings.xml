@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Ut</string>
+    <string name="action_settings">Settings</string>
+	<string name="placeholder">Hello Chappi</string>
+
+<!--	Add Course fragment -->
+
+<!--	 >> Static text-->
+	<string name="mainTitle_addCourse">Add a new course:</string>
+
+<!--	 >> Inputs -->
+	<string name="i_addCourse_name">Name</string>
+	<string name="i_addCourse_signature">Signature</string>
+	<string name="i_addCourse_room">Room</string>
+	<string name="i_addCourse_time">Time</string>
+
+	<!-- >> Buttons -->
+	<string name="i_addCourse_add">Add</string>
+</resources>

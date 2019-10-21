@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/add_course_title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/mainTitle_addCourse"
+		android:textAlignment="center"
+		android:textSize="36sp"
+		android:textStyle="bold" />
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/course_name_input"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/i_addCourse_name">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/i_addCourse_name"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/signaure_input"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/i_addCourse_signature">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/i_addCourse_signature"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/i_addCourse_room"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="@string/i_addCourse_room" />
+
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/time_input"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/i_addCourse_time"
+		tools:hint="@string/i_addCourse_time">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/i_addCourse_time"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<Button
+		android:id="@+id/b_addCourse_add"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/i_addCourse_add" />
+</LinearLayout>
