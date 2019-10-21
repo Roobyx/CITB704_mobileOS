@@ -2,13 +2,14 @@ package com.rbx.ut
 
 import android.content.Intent
 import android.os.Bundle
-import android.service.autofill.OnClickAction
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,15 +18,17 @@ class MainActivity : AppCompatActivity() {
 		setContentView(R.layout.activity_main)
 		setSupportActionBar(toolbar)
 
-		fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
-				println("Clicked")
+		val courses = ArrayList<ModelDetails>()
+		courses.add(ModelDetails("Операционни системи за мобилни устройства", "CITB704", "314 I", "08:00 - 09:30"))
+		courses.add(ModelDetails("Генератори на компютърни игри", "CITB603", "702 II", "18:00 - 19:30"))
 
-            val intent = Intent(this, AddCourse::class.java).also(this::startActivity)
+		val adapter = CourseAdapter(courses)
+		home_recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+		home_recyclerView.adapter = adapter
 
-
-        }
+		fab.setOnClickListener {
+			Intent(this, AddCourse::class.java).also(this::startActivity)
+		}
 	}
 
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -35,9 +38,6 @@ class MainActivity : AppCompatActivity() {
 	}
 
 	override fun onOptionsItemSelected(item: MenuItem): Boolean {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
 		return when (item.itemId) {
 			R.id.action_settings -> true
 			else -> super.onOptionsItemSelected(item)

@@ -9,10 +9,10 @@ import kotlinx.android.synthetic.main.add_course.*
 
 class AddCourse : AppCompatActivity() {
 
-	private val courseName: String get() = i_addCourse_name.text.toString()
-	private val courseSignature: String get() = i_addCourse_signature.text.toString()
-	private val courseRoom: String get() = i_addCourse_room.text.toString()
-	private val courseTime: String get() = i_addCourse_time.text.toString()
+    private var courseName : String = i_addCourse_name.text.toString()
+	private var courseSignature: String = i_addCourse_signature.text.toString()
+	private var courseRoom: String = i_addCourse_room.text.toString()
+	private var courseTime: String = i_addCourse_time.text.toString()
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
