@@ -7,6 +7,10 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
+import com.rbx.ut.Course.CourseAddActivity
+import com.rbx.ut.Course.CourseAdapter
+import com.rbx.ut.Course.Course
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -18,15 +22,42 @@ class MainActivity : AppCompatActivity() {
 		setContentView(R.layout.activity_main)
 		setSupportActionBar(toolbar)
 
-		val courses = ArrayList<CourseModel>()
-		courses.add(CourseModel("Операционни системи за мобилни устройства", "CITB704", "314 I", "08:00 - 09:30"))
-		courses.add(CourseModel("Генератори на компютърни игри", "CITB603", "702 II", "18:00 - 19:30"))
+//		val courses = ArrayList<Course>()
+//		courses.add(
+//            Course(
+//                "Операционни системи за мобилни устройства",
+//                "CITB704",
+//                "314 I",
+//                "08:00 - 09:30"
+//            )
+//        )
+
+		val db = Room.databaseBuilder(
+			applicationContext,
+			AppDatabase::class.java, "production").allowMainThreadQueries().build()
+
+//        val db = Room.databaseBuilder(
+//            applicationContext,
+//            AppDatabase::class.java, "todo-list.db"
+//        ).build()
+
+		val courses: List<Course> = db.courseDao().getAllCourses()
+
+//		db.courseDao().insertAll(
+//			Course(
+//				"Генератори на компютърни игри",
+//				"CITB603",
+//				"702 II",
+//				"18:00 - 19:30"
+//		  )
+//		)
+
 
 		home_recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 		home_recyclerView.adapter = CourseAdapter(courses)
 
 		fab.setOnClickListener {
-			Intent(this, AddCourse::class.java).also(this::startActivity)
+			Intent(this, CourseAddActivity::class.java).also(this::startActivity)
 		}
 	}
 

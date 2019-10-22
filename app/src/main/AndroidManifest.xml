@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-			android:name=".AddCourse"
+			android:name=".Course.CourseAddActivity"
 			android:label="Ut"
 			android:theme="@style/AppTheme.NoActionBar"
 			/>

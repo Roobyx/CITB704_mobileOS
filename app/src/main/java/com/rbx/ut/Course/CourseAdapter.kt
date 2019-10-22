@@ -1,13 +1,14 @@
-package com.rbx.ut
+package com.rbx.ut.Course
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.rbx.ut.AppDatabase
+import com.rbx.ut.R
 import kotlinx.android.synthetic.main.course_row.view.*
 
-class CourseAdapter(private val courseList: ArrayList<CourseModel>) : RecyclerView.Adapter<CourseAdapter.ViewHolder>() {
-
+class CourseAdapter(private val courseList: List<Course>) : RecyclerView.Adapter<CourseAdapter.ViewHolder>() {
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 		val v = LayoutInflater.from(parent.context).inflate(R.layout.course_row, parent, false)
 		return ViewHolder(v)
@@ -22,8 +23,7 @@ class CourseAdapter(private val courseList: ArrayList<CourseModel>) : RecyclerVi
 	}
 
 	class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-		fun bindItems(course: CourseModel) {
-
+		fun bindItems(course: Course) {
 			itemView.label_cr_course_signature.text = course.signature
 			itemView.label_cr_course_name.text = course.courseName
 			itemView.label_cr_course_room.text = course.room
